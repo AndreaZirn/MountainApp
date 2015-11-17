@@ -2,8 +2,7 @@ package ch.fhnw.oop2.mountains; /**
  * Created by andreazirn on 16/11/15.
  */
 
-import java.io.IOException;
-
+import ch.fhnw.oop2.mountains.view.MountainOverviewController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -11,7 +10,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class MountainStarter extends Application {
+
     private Stage primaryStage;
     private BorderPane rootLayout;
 
@@ -56,6 +58,11 @@ public class MountainStarter extends Application {
 
             // Set mountain overview into the center of root layout.
             rootLayout.setCenter(mountainOverview);
+
+            // Give the controller access to the main app.
+            MountainOverviewController controller = loader.getController();
+           // controller.setMountainStarter(this);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -72,4 +79,6 @@ public class MountainStarter extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
+
 }
