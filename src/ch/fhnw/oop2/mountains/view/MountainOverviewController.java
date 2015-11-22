@@ -24,17 +24,17 @@ public class MountainOverviewController {
     private TableColumn<Mountain, String> hoeheColumn;
 
     @FXML
-    private Label ameLabel;
+    private Label nameLabel;
     @FXML
     private Label hoeheLabel;
     @FXML
     private Label dominanzLabel;
     @FXML
-    private Label kmBisCodeLabel;
+    private Label kmBisLabel;
     @FXML
     private Label SchartenhoeheLabel;
     @FXML
-    private Label typCodeLabel;
+    private Label typLabel;
     @FXML
     private Label regionLabel;
     @FXML
