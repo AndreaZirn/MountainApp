@@ -1,6 +1,7 @@
 package ch.fhnw.oop2.mountains.view;
 
 
+import ch.fhnw.oop2.mountains.MountainStarter;
 import ch.fhnw.oop2.mountains.model.Mountain;
 import ch.fhnw.oop2.mountains.model.MountainListModel;
 import javafx.fxml.FXML;
@@ -21,7 +22,7 @@ public class MountainOverviewController {
     @FXML
     private TableColumn<Mountain, String> nameColumn;
     @FXML
-    private TableColumn<Mountain, String> hoeheColumn;
+    private TableColumn<Mountain, Integer> hoeheColumn;
 
     @FXML
     private Label nameLabel;
@@ -65,7 +66,7 @@ public class MountainOverviewController {
         // Initialize the mountain table with the three columns.
         idColumn.setCellValueFactory(cellData -> cellData.getValue().idProperty().asObject());
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
-        //hoeheColumn.setCellValueFactory(cellData -> cellData.getValue().hoeheProperty().asObject());
+        hoeheColumn.setCellValueFactory(cellData -> cellData.getValue().hoeheProperty().asObject());
 
     }
 
