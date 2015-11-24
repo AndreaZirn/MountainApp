@@ -11,7 +11,7 @@ import javafx.scene.control.TableView;
 
 
 /**
- * Created by andreazirn on 17/11/15.
+ * Created by Andrea Zirn and Irina Terribilini, oop2, Dieter Holz, HS2015
  */
 public class MountainOverviewController {
 

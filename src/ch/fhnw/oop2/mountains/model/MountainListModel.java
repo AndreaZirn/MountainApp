@@ -17,12 +17,12 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * Created by andreazirn on 17/11/15.
+ * Created by Andrea Zirn and Irina Terribilini, oop2, Dieter Holz, HS2015
  */
 public class MountainListModel {
 
 
-    private static final String FILE_NAME = "mountains.csv";
+    private static final String FILE_NAME = "data/mountains.csv";
 
     private static final String TAB = "\\t";
 
@@ -54,7 +54,7 @@ public class MountainListModel {
     private List<Mountain> readFromFile() {
         try (Stream<String> stream = getStreamOfLines(FILE_NAME)) {
             return stream.skip(1)                              // erste Zeile ist die Headerzeile; ueberspringen
-                    .map(s -> new Mountain(s.split(TAB)))      // aus jeder Zeile ein Objekt machen
+                    .map(s -> new Mountain(s.split(",")))      // aus jeder Zeile ein Objekt machen
                     .collect(Collectors.toList());            // alles aufsammeln
         }
     }

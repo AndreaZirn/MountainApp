@@ -1,5 +1,7 @@
-package ch.fhnw.oop2.mountains; /**
- * Created by andreazirn on 16/11/15.
+package ch.fhnw.oop2.mountains;
+
+/**
+ * Created by Andrea Zirn and Irina Terribilini, oop2, Dieter Holz, HS2015
  */
 
 import ch.fhnw.oop2.mountains.view.MountainOverviewController;
