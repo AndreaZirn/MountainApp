@@ -79,7 +79,7 @@ public class MountainOverviewController {
      *
      * @param mountainListModel
      */
-    public void setMountainStarter(MountainListModel mountainListModel) {
+    public void setMountainListModel(MountainListModel mountainListModel) {
         this.mountainListModel = mountainListModel;
 
         // Add observable list data to the table

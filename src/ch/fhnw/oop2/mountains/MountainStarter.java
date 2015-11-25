@@ -5,6 +5,7 @@ package ch.fhnw.oop2.mountains;
  */
 
 import ch.fhnw.oop2.mountains.view.MountainOverviewController;
+import ch.fhnw.oop2.mountains.model.MountainListModel;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -63,7 +64,9 @@ public class MountainStarter extends Application {
 
             // Give the controller access to the main app.
             MountainOverviewController controller = loader.getController();
-           // controller.setMountainStarter(this);
+            MountainListModel model = new MountainListModel();
+            controller.setMountainListModel(model);
+
 
         } catch (IOException e) {
             e.printStackTrace();

@@ -24,8 +24,6 @@ public class MountainListModel {
 
     private static final String FILE_NAME = "data/mountains.csv";
 
-    private static final String TAB = "\\t";
-
     private final StringProperty applicationTitle = new SimpleStringProperty("Swiss Mountains");
 
     private final ObservableList<Mountain> mountain = FXCollections.observableArrayList();
