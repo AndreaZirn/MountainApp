@@ -35,7 +35,7 @@ public class MountainListModel {
     }
 
     public void save() {
-        try (BufferedWriter writer = Files.newBufferedWriter(getPath(FILE_NAME, true))) {
+        try (BufferedWriter writer = Files.newBufferedWriter(getPath(FILE_NAME, false))) {
             writer.write("ID\tName\tDominanz\tSchartenhoehe\tHoehe\tkm bis\tm bis\tTyp\tRegion\tKanton\tGebiet\tBildunterschrift");
             writer.newLine();
             mountain.stream().forEach(mountain -> {
@@ -61,7 +61,7 @@ public class MountainListModel {
 
     private Stream<String> getStreamOfLines(String fileName) {
         try {
-            return Files.lines(getPath(fileName, true), StandardCharsets.UTF_8);
+            return Files.lines(getPath(fileName, false), StandardCharsets.UTF_8);
         } catch (IOException e) {
             throw new IllegalStateException(e);
         }
