@@ -25,6 +25,8 @@ public class MountainOverviewController {
     private TableColumn<Mountain, Integer> hoeheColumn;
 
     @FXML
+    private Label idLabel;
+    @FXML
     private Label nameLabel;
     @FXML
     private Label hoeheLabel;
@@ -32,6 +34,8 @@ public class MountainOverviewController {
     private Label dominanzLabel;
     @FXML
     private Label kmBisLabel;
+    @FXML
+    private Label mBisLabel;
     @FXML
     private Label SchartenhoeheLabel;
     @FXML
