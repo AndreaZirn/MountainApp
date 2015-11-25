@@ -42,13 +42,6 @@ public class Mountain {
         setSchartenhoehe(Double.valueOf(line[9]));
         setmBis(line[10]);
         setBildunterschrift(line[11]);
-
-
-
-
-
-
-
     }
 
 
