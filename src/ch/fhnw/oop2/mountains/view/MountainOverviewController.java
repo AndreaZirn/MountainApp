@@ -1,7 +1,7 @@
 package ch.fhnw.oop2.mountains.view;
 
 
-import ch.fhnw.oop2.mountains.MountainStarter;
+
 import ch.fhnw.oop2.mountains.model.Mountain;
 import ch.fhnw.oop2.mountains.model.MountainListModel;
 import javafx.fxml.FXML;

@@ -62,7 +62,7 @@ public class MountainStarter extends Application {
             // Set mountain overview into the center of root layout.
             rootLayout.setCenter(mountainOverview);
 
-            // Give the controller access to the main app.
+            // Give the controller access to the Model class.
             MountainOverviewController controller = loader.getController();
             MountainListModel model = new MountainListModel();
             controller.setMountainListModel(model);
