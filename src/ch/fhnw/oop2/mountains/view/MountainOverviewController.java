@@ -37,7 +37,7 @@ public class MountainOverviewController {
     @FXML
     private Label mBisLabel;
     @FXML
-    private Label SchartenhoeheLabel;
+    private Label schartenhoeheLabel;
     @FXML
     private Label typLabel;
     @FXML
@@ -72,6 +72,12 @@ public class MountainOverviewController {
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
         hoeheColumn.setCellValueFactory(cellData -> cellData.getValue().hoeheProperty().asObject());
 
+        //Clear mountain details
+        showMountainDetails(null);
+
+        //Listen for selection changes and show the mountain details when changed
+        mountainTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue)->
+                showMountainDetails(newValue));
     }
 
     /**
@@ -85,5 +91,45 @@ public class MountainOverviewController {
         // Add observable list data to the table
         mountainTable.setItems(mountainListModel.getMountain());
     }
+
+    /**
+     * Fills all text fields to show details about the mountain.
+     * If the specified mountain is null, all text fields are cleared.
+     *
+     * @param mountain the mountain or null
+     */
+    private void showMountainDetails(Mountain mountain) {
+        if (mountain != null) {
+            // Fill the labels with info from the mountain object.
+         //   idLabel.setText(String.valueOf(mountain.getId()));
+            nameLabel.setText(mountain.getName());
+            hoeheLabel.setText(String.valueOf(mountain.getHoehe()));
+            dominanzLabel.setText(Integer.toString((int) mountain.getDominanz()));
+            kmBisLabel.setText(mountain.getKmBis());
+            mBisLabel.setText(mountain.getmBis());
+            schartenhoeheLabel.setText(String.valueOf(mountain.getSchartenhoehe()));
+            typLabel.setText(mountain.getTyp());
+            regionLabel.setText(mountain.getRegion());
+            kantonLabel.setText(mountain.getKanton());
+            gebietLabel.setText(mountain.getGebiet());
+            bildunterschriftLabel.setText(mountain.getBildunterschrift());
+        } else {
+            // Mountain is null, remove all the text.
+         //   idLabel.setText("");
+            nameLabel.setText("");
+            hoeheLabel.setText("");
+            dominanzLabel.setText("");
+            kmBisLabel.setText("");
+            mBisLabel.setText("");
+            schartenhoeheLabel.setText("");
+            typLabel.setText("");
+            regionLabel.setText("");
+            kantonLabel.setText("");
+            gebietLabel.setText("");
+            bildunterschriftLabel.setText("");
+        }
+    }
+
+
 }
 
