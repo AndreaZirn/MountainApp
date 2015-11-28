@@ -28,14 +28,14 @@ public class Mountain {
     private final StringProperty gebiet = new SimpleStringProperty();
     private final StringProperty bildunterschrift = new SimpleStringProperty();
 
-    //Reheinfolge nach Spalten in csv-Datei
+    //Reihenfolge nach Spalten in csv-Datei
     public Mountain(String[] line) {
         setId(Integer.valueOf(line[0]));
         setName(line[1]);
         setHoehe(Integer.valueOf(line[2]));
         setTyp(line[3]);
         setRegion(line[4]);
-        setKanton(line[5]); //in mountain.csv ist diese Zeile leer. Evtl. Kantone einfügen?
+        setKanton(line[5]); //in mountain.csv ist diese Zeile leer. Evtl. Kantone einfï¿½gen?
         setGebiet(line[6]);
         setDominanz(Double.valueOf(line[7]));
         setKmBis(line[8]);
