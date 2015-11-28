@@ -1,9 +1,6 @@
 package ch.fhnw.oop2.mountains.view;
 
-import ch.fhnw.oop2.mountains.MountainStarter;
 import ch.fhnw.oop2.mountains.model.Mountain;
-import ch.fhnw.oop2.mountains.model.MountainListModel;
-import ch.fhnw.oop2.mountains.view.MountainOverviewController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableView;
@@ -206,42 +203,4 @@ public class MountainEditDialogController {
         }
     }
 
-    /**
-     * Called when the user clicks the new button. Opens a dialog to edit
-     * details for a new mountain.
-     */
-    @FXML
-    private void handleNewMountain() {
-        Mountain tempMountain = new Mountain();
-        boolean okClicked = MountainStarter.showMountainEditDialog(tempMountain);
-        if (okClicked) {
-            MountainListModel.getMountain().add(tempMountain);
-        }
-    }
-
-
-    /**
-     * Called when the user clicks the edit button. Opens a dialog to edit
-     * details for the selected mountain.
-     */
-    @FXML
-    private void handleEditMountain() {
-        Mountain selectedMountain = mountainTable.getSelectionModel().getSelectedItem();
-        if (selectedMountain != null) {
-            boolean okClicked = MountainStarter.showMountainEditDialog(selectedMountain);
-            if (okClicked) {
-               showMountainDetails(selectedMountain);
-            }
-
-        } else {
-            // Nothing selected.
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.initOwner(MountainStarter.getPrimaryStage());
-            alert.setTitle("Keine Auswahl");
-            alert.setHeaderText("Es wurde kein Berg ausgewählt");
-            alert.setContentText("Bitte wähle einen Berg aus.");
-
-            alert.showAndWait();
-        }
-    }
 }

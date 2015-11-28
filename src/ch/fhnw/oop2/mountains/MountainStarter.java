@@ -69,7 +69,8 @@ public class MountainStarter extends Application {
             MountainOverviewController controller = loader.getController();
             MountainListModel model = new MountainListModel();
             controller.setMountainListModel(model);
-
+            MountainStarter starter = this;
+            controller.setMountainStarter(starter);
 
         } catch (IOException e) {
             e.printStackTrace();

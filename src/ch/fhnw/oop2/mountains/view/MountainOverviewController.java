@@ -53,6 +53,7 @@ public class MountainOverviewController {
 
     // Reference to the mountain list model
     private MountainListModel mountainListModel;
+    private MountainStarter mountainStarter;
 
     /**
      * The constructor.
@@ -91,6 +92,11 @@ public class MountainOverviewController {
         // Add observable list data to the table
         mountainTable.setItems(mountainListModel.getMountain());
     }
+
+   public void setMountainStarter(MountainStarter mountainStarter) {
+        this.mountainStarter = mountainStarter;
+    }
+
 
     /**
      * Fills all text fields to show details about the mountain.
@@ -144,6 +150,44 @@ public class MountainOverviewController {
             alert.setTitle("Fehlende Auswahl");
             alert.setHeaderText("Es wurde kein Berg ausgewählt");
             alert.setContentText("Um einen Berg zu löschen, muss dieser zuerst in der Liste ausgewählt werden");
+
+            alert.showAndWait();
+        }
+    }
+
+    /**
+     * Called when the user clicks the new button. Opens a dialog to edit
+     * details for a new mountain.
+     */
+    @FXML
+    private void handleNewMountain() {
+        Mountain tempMountain = new Mountain();
+        boolean okClicked = mountainStarter.showMountainEditDialog(tempMountain);
+        if (okClicked) {
+            mountainListModel.getMountain().add(tempMountain);
+        }
+    }
+
+    /**
+     * Called when the user clicks the edit button. Opens a dialog to edit
+     * details for the selected mountain.
+     */
+    @FXML
+    private void handleEditMountain() {
+        Mountain selectedMountain = mountainTable.getSelectionModel().getSelectedItem();
+        if (selectedMountain != null) {
+            boolean okClicked = mountainStarter.showMountainEditDialog(selectedMountain);
+            if (okClicked) {
+                showMountainDetails(selectedMountain);
+            }
+
+        } else {
+            // Nothing selected.
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.initOwner(MountainStarter.getPrimaryStage());
+            alert.setTitle("Keine Auswahl");
+            alert.setHeaderText("Es wurde kein Berg ausgewählt");
+            alert.setContentText("Bitte wähle einen Berg aus.");
 
             alert.showAndWait();
         }
