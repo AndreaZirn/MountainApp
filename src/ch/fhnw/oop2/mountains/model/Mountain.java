@@ -17,7 +17,7 @@ public class Mountain {
 
     private final StringProperty name = new SimpleStringProperty();
     private final IntegerProperty id = new SimpleIntegerProperty();
-    private final IntegerProperty hoehe = new SimpleIntegerProperty();
+    private final DoubleProperty hoehe = new SimpleDoubleProperty();
     private final DoubleProperty dominanz = new SimpleDoubleProperty();
     private final DoubleProperty schartenhoehe = new SimpleDoubleProperty();
     private final StringProperty kmBis = new SimpleStringProperty();
@@ -32,7 +32,7 @@ public class Mountain {
     public Mountain(String[] line) {
         setId(Integer.valueOf(line[0]));
         setName(line[1]);
-        setHoehe(Integer.valueOf(line[2]));
+        setHoehe(Double.valueOf(line[2]));
         setTyp(line[3]);
         setRegion(line[4]);
         setKanton(line[5]); //in mountain.csv ist diese Zeile leer. Evtl. Kantone einf�gen?
@@ -67,7 +67,7 @@ public class Mountain {
     public String infoAsLine() {
         return String.join("\t",
                 Integer.toString(getId()),
-                Integer.toString(getHoehe()),
+                Double.toString(getHoehe()),
                 getName(),
                 Double.toString(getDominanz()),
                 Double.toString(getSchartenhoehe()),
@@ -104,15 +104,16 @@ public class Mountain {
     public void setId(int id) {
         this.id.set(id);
     }
-    public int getHoehe() {
+
+    public double getHoehe() {
         return hoehe.get();
     }
 
-    public IntegerProperty hoeheProperty() {
+    public DoubleProperty hoeheProperty() {
         return hoehe;
     }
 
-    public void setHoehe(int hoehe) {
+    public void setHoehe(Double hoehe) {
         this.hoehe.set(hoehe);
     }
 

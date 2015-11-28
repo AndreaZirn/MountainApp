@@ -22,7 +22,7 @@ public class MountainOverviewController {
     @FXML
     private TableColumn<Mountain, String> nameColumn;
     @FXML
-    private TableColumn<Mountain, Integer> hoeheColumn;
+    private TableColumn<Mountain, Double> hoeheColumn;
 
     @FXML
     private Label idLabel;
