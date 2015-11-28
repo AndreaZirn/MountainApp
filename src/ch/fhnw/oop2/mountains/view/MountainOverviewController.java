@@ -1,10 +1,11 @@
 package ch.fhnw.oop2.mountains.view;
 
 
-
+import ch.fhnw.oop2.mountains.MountainStarter;
 import ch.fhnw.oop2.mountains.model.Mountain;
 import ch.fhnw.oop2.mountains.model.MountainListModel;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -50,7 +51,6 @@ public class MountainOverviewController {
     private Label bildunterschriftLabel;
 
 
-
     // Reference to the mountain list model
     private MountainListModel mountainListModel;
 
@@ -76,7 +76,7 @@ public class MountainOverviewController {
         showMountainDetails(null);
 
         //Listen for selection changes and show the mountain details when changed
-        mountainTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue)->
+        mountainTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) ->
                 showMountainDetails(newValue));
     }
 
@@ -98,10 +98,9 @@ public class MountainOverviewController {
      *
      * @param mountain the mountain or null
      */
-    private void showMountainDetails(Mountain mountain) {
+    public void showMountainDetails(Mountain mountain) {
         if (mountain != null) {
             // Fill the labels with info from the mountain object.
-         //   idLabel.setText(String.valueOf(mountain.getId()));
             nameLabel.setText(mountain.getName());
             hoeheLabel.setText(String.valueOf(mountain.getHoehe()));
             dominanzLabel.setText(Integer.toString((int) mountain.getDominanz()));
@@ -115,7 +114,6 @@ public class MountainOverviewController {
             bildunterschriftLabel.setText(mountain.getBildunterschrift());
         } else {
             // Mountain is null, remove all the text.
-         //   idLabel.setText("");
             nameLabel.setText("");
             hoeheLabel.setText("");
             dominanzLabel.setText("");
@@ -130,6 +128,24 @@ public class MountainOverviewController {
         }
     }
 
+    /**
+     * Called when the user clicks on the delete button.
+     */
+    @FXML
+    private void handleDeleteMountain() {
+        int selectedIndex = mountainTable.getSelectionModel().getSelectedIndex();
+        if (selectedIndex >= 0) {
+            //TODO: Sicherheitsmeldung vor dem Löschen
+            mountainTable.getItems().remove(selectedIndex);
+        } else {
+            // Nothing selected.
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.initOwner(MountainStarter.getPrimaryStage());
+            alert.setTitle("Fehlende Auswahl");
+            alert.setHeaderText("Es wurde kein Berg ausgewählt");
+            alert.setContentText("Um einen Berg zu löschen, muss dieser zuerst in der Liste ausgewählt werden");
 
+            alert.showAndWait();
+        }
+    }
 }
-

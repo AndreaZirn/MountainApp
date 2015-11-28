@@ -28,6 +28,10 @@ public class Mountain {
     private final StringProperty gebiet = new SimpleStringProperty();
     private final StringProperty bildunterschrift = new SimpleStringProperty();
 
+    //Default Konstruktor
+    public Mountain() {
+    }
+
     //Reihenfolge nach Spalten in csv-Datei
     public Mountain(String[] line) {
         setId(Integer.valueOf(line[0]));
