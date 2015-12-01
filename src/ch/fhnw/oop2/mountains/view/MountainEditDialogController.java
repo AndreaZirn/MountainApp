@@ -8,9 +8,7 @@ import javafx.stage.Stage;
 
 
 /**
- * Dialog to edit details of a mountain.
- *
- * @author Andrea Zirn
+ * Created by Andrea Zirn and Irina Terribilini, oop2, Dieter Holz, HS2015
  */
 public class MountainEditDialogController {
 
