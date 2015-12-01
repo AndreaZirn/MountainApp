@@ -9,6 +9,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 
 
 /**
@@ -26,29 +27,29 @@ public class MountainOverviewController {
     private TableColumn<Mountain, Double> hoeheColumn;
 
     @FXML
-    private Label idLabel;
+    private TextField idField;
     @FXML
-    private Label nameLabel;
+    private TextField nameField;
     @FXML
-    private Label hoeheLabel;
+    private TextField hoeheField;
     @FXML
-    private Label dominanzLabel;
+    private TextField dominanzField;
     @FXML
-    private Label kmBisLabel;
+    private TextField kmBisField;
     @FXML
-    private Label mBisLabel;
+    private TextField mBisField;
     @FXML
-    private Label schartenhoeheLabel;
+    private TextField schartenhoeheField;
     @FXML
-    private Label typLabel;
+    private TextField typField;
     @FXML
-    private Label regionLabel;
+    private TextField regionField;
     @FXML
-    private Label kantonLabel;
+    private TextField kantonField;
     @FXML
-    private Label gebietLabel;
+    private TextField gebietField;
     @FXML
-    private Label bildunterschriftLabel;
+    private TextField bildunterschriftField;
 
 
     // Reference to the mountain list model
@@ -107,30 +108,30 @@ public class MountainOverviewController {
     public void showMountainDetails(Mountain mountain) {
         if (mountain != null) {
             // Fill the labels with info from the mountain object.
-            nameLabel.setText(mountain.getName());
-            hoeheLabel.setText(String.valueOf(mountain.getHoehe()));
-            dominanzLabel.setText(Integer.toString((int) mountain.getDominanz()));
-            kmBisLabel.setText(mountain.getKmBis());
-            mBisLabel.setText(mountain.getmBis());
-            schartenhoeheLabel.setText(String.valueOf(mountain.getSchartenhoehe()));
-            typLabel.setText(mountain.getTyp());
-            regionLabel.setText(mountain.getRegion());
-            kantonLabel.setText(mountain.getKanton());
-            gebietLabel.setText(mountain.getGebiet());
-            bildunterschriftLabel.setText(mountain.getBildunterschrift());
+            nameField.setText(mountain.getName());
+            hoeheField.setText(String.valueOf(mountain.getHoehe()));
+            dominanzField.setText(Integer.toString((int) mountain.getDominanz()));
+            kmBisField.setText(mountain.getKmBis());
+            mBisField.setText(mountain.getmBis());
+            schartenhoeheField.setText(String.valueOf(mountain.getSchartenhoehe()));
+            typField.setText(mountain.getTyp());
+            regionField.setText(mountain.getRegion());
+            kantonField.setText(mountain.getKanton());
+            gebietField.setText(mountain.getGebiet());
+            bildunterschriftField.setText(mountain.getBildunterschrift());
         } else {
             // Mountain is null, remove all the text.
-            nameLabel.setText("");
-            hoeheLabel.setText("");
-            dominanzLabel.setText("");
-            kmBisLabel.setText("");
-            mBisLabel.setText("");
-            schartenhoeheLabel.setText("");
-            typLabel.setText("");
-            regionLabel.setText("");
-            kantonLabel.setText("");
-            gebietLabel.setText("");
-            bildunterschriftLabel.setText("");
+            nameField.setText("");
+            hoeheField.setText("");
+            dominanzField.setText("");
+            kmBisField.setText("");
+            mBisField.setText("");
+            schartenhoeheField.setText("");
+            typField.setText("");
+            regionField.setText("");
+            kantonField.setText("");
+            gebietField.setText("");
+            bildunterschriftField.setText("");
         }
     }
 
