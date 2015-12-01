@@ -3,10 +3,9 @@ package ch.fhnw.oop2.mountains.view;
 import ch.fhnw.oop2.mountains.model.Mountain;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
-import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.awt.*;
 
 /**
  * Dialog to edit details of a mountain.
@@ -15,8 +14,6 @@ import java.awt.*;
  */
 public class MountainEditDialogController {
 
-    @FXML
-    private TableView<Mountain> mountainTable;
     @FXML
     private TextField nameField;
     @FXML
@@ -73,7 +70,7 @@ public class MountainEditDialogController {
         nameField.setText(mountain.getName());
         hoeheField.setText(String.valueOf(mountain.getHoehe()));
         dominanzField.setText(String.valueOf(mountain.getDominanz()));
-        kmBisField.setText(Integer.toString(Integer.parseInt(mountain.getKmBis())));
+        kmBisField.setText(mountain.getKmBis());
         mBisField.setText(mountain.getmBis());
         schartenhoeheField.setText(String.valueOf(mountain.getSchartenhoehe()));
         typField.setText(mountain.getTyp());

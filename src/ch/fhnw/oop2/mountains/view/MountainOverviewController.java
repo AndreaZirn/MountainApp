@@ -135,27 +135,6 @@ public class MountainOverviewController {
     }
 
     /**
-     * Called when the user clicks on the delete button.
-     */
-    @FXML
-    private void handleDeleteMountain() {
-        int selectedIndex = mountainTable.getSelectionModel().getSelectedIndex();
-        if (selectedIndex >= 0) {
-            //TODO: Sicherheitsmeldung vor dem Löschen
-            mountainTable.getItems().remove(selectedIndex);
-        } else {
-            // Nothing selected.
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.initOwner(MountainStarter.getPrimaryStage());
-            alert.setTitle("Fehlende Auswahl");
-            alert.setHeaderText("Es wurde kein Berg ausgewählt");
-            alert.setContentText("Um einen Berg zu löschen, muss dieser zuerst in der Liste ausgewählt werden");
-
-            alert.showAndWait();
-        }
-    }
-
-    /**
      * Called when the user clicks the new button. Opens a dialog to edit
      * details for a new mountain.
      */
@@ -192,4 +171,29 @@ public class MountainOverviewController {
             alert.showAndWait();
         }
     }
+
+
+
+    /**
+     * Called when the user clicks on the delete button.
+     */
+    @FXML
+    private void handleDeleteMountain() {
+        int selectedIndex = mountainTable.getSelectionModel().getSelectedIndex();
+        if (selectedIndex >= 0) {
+            //TODO: Sicherheitsmeldung vor dem Löschen
+            mountainTable.getItems().remove(selectedIndex);
+        } else {
+            // Nothing selected.
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.initOwner(MountainStarter.getPrimaryStage());
+            alert.setTitle("Fehlende Auswahl");
+            alert.setHeaderText("Es wurde kein Berg ausgewählt");
+            alert.setContentText("Um einen Berg zu löschen, muss dieser zuerst in der Liste ausgewählt werden");
+
+            alert.showAndWait();
+        }
+    }
+
 }
+
