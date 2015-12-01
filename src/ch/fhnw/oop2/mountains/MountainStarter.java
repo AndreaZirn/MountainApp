@@ -30,6 +30,7 @@ public class MountainStarter extends Application {
         this.primaryStage.setTitle("MountainApp");
 
         initRootLayout();
+
         showMountainOverview();
     }
 
