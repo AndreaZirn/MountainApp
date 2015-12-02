@@ -11,6 +11,7 @@ import ch.fhnw.oop2.mountains.view.MountainOverviewController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
@@ -24,10 +25,15 @@ public class MountainStarter extends Application {
     private BorderPane rootLayout;
 
 
+
     @Override
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("MountainApp");
+
+        //Icon wird noch nicht angezeigt
+        // TODO Set the application icon.
+       this.primaryStage.getIcons().add(new Image("file:data/Schweizerfahne.png"));
 
         initRootLayout();
 
