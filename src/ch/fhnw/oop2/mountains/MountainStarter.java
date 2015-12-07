@@ -8,6 +8,7 @@ import ch.fhnw.oop2.mountains.model.Mountain;
 import ch.fhnw.oop2.mountains.model.MountainListModel;
 import ch.fhnw.oop2.mountains.view.MountainEditDialogController;
 import ch.fhnw.oop2.mountains.view.MountainOverviewController;
+import ch.fhnw.oop2.mountains.view.RootLayoutController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

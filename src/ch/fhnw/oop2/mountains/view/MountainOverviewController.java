@@ -93,7 +93,7 @@ public class MountainOverviewController {
         mountainTable.setItems(mountainListModel.getMountain());
     }
 
-   public void setMountainStarter(MountainStarter mountainStarter) {
+    public void setMountainStarter(MountainStarter mountainStarter) {
         this.mountainStarter = mountainStarter;
     }
 
@@ -138,7 +138,7 @@ public class MountainOverviewController {
      * Called when the user clicks the new button. Opens a dialog to edit
      * details for a new mountain.
      */
-    @FXML
+    /*@FXML
     private void handleNewMountain() {
         Mountain tempMountain = new Mountain();
         boolean okClicked = mountainStarter.showMountainEditDialog(tempMountain);
@@ -151,7 +151,7 @@ public class MountainOverviewController {
      * Called when the user clicks the edit button. Opens a dialog to edit
      * details for the selected mountain.
      */
-    @FXML
+  /*  @FXML
     private void handleEditMountain() {
         Mountain selectedMountain = mountainTable.getSelectionModel().getSelectedItem();
         if (selectedMountain != null) {
@@ -173,11 +173,10 @@ public class MountainOverviewController {
     }
 
 
-
     /**
      * Called when the user clicks on the delete button.
      */
-    @FXML
+   /* @FXML
     private void handleDeleteMountain() {
         int selectedIndex = mountainTable.getSelectionModel().getSelectedIndex();
         if (selectedIndex >= 0) {
@@ -194,6 +193,6 @@ public class MountainOverviewController {
             alert.showAndWait();
         }
     }
-
+*/
 }
 
