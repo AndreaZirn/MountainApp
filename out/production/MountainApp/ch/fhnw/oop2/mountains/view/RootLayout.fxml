@@ -4,13 +4,13 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#handleNewMountain" prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.fhnw.oop2.mountains.view.RootLayoutController">
    <top>
       <Pane prefHeight="45.0" prefWidth="850.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="14.0" layoutY="9.0" mnemonicParsing="false" text="Button" />
-            <Button layoutX="87.0" layoutY="9.0" mnemonicParsing="false" text="Button" />
-            <Button layoutX="159.0" layoutY="9.0" mnemonicParsing="false" text="Button" />
+            <Button layoutX="14.0" layoutY="9.0" mnemonicParsing="false" onAction="#handleNewMountain" text="Neu" />
+            <Button layoutX="87.0" layoutY="9.0" mnemonicParsing="false" onAction="#handleDeleteMountain" text="Löschen" />
+            <Button layoutX="190.0" layoutY="9.0" mnemonicParsing="false" text="Edit" />
          </children>
       </Pane>
    </top>
