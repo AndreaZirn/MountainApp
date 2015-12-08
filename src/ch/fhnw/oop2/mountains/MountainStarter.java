@@ -50,6 +50,7 @@ public class MountainStarter extends Application {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MountainStarter.class.getResource("view/RootLayout.fxml"));
             rootLayout = (BorderPane) loader.load();
+            ((RootLayoutController)loader.getController()).setMountainStarter(this);
 
             // Show the scene containing the root layout.
             Scene scene = new Scene(rootLayout);

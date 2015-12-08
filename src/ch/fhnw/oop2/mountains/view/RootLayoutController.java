@@ -1,9 +1,9 @@
 package ch.fhnw.oop2.mountains.view;
 
 import ch.fhnw.oop2.mountains.MountainStarter;
+import ch.fhnw.oop2.mountains.model.Mountain;
 import ch.fhnw.oop2.mountains.model.MountainListModel;
 import javafx.fxml.FXML;
-import ch.fhnw.oop2.mountains.model.Mountain;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -113,8 +113,8 @@ public class RootLayoutController {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.initOwner(MountainStarter.getPrimaryStage());
             alert.setTitle("Keine Auswahl");
-            alert.setHeaderText("Es wurde kein Berg ausgewählt");
-            alert.setContentText("Bitte wähle einen Berg aus.");
+            alert.setHeaderText("Es wurde kein Berg ausgewï¿½hlt");
+            alert.setContentText("Bitte wï¿½hle einen Berg aus.");
 
             alert.showAndWait();
         }
@@ -127,15 +127,15 @@ public class RootLayoutController {
     private void handleDeleteMountain() {
         int selectedIndex = mountainTable.getSelectionModel().getSelectedIndex();
         if (selectedIndex >= 0) {
-            //TODO: Sicherheitsmeldung vor dem Löschen
+            //TODO: Sicherheitsmeldung vor dem Lï¿½schen
             mountainTable.getItems().remove(selectedIndex);
         } else {
             // Nothing selected.
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.initOwner(MountainStarter.getPrimaryStage());
             alert.setTitle("Fehlende Auswahl");
-            alert.setHeaderText("Es wurde kein Berg ausgewählt");
-            alert.setContentText("Um einen Berg zu löschen, muss dieser zuerst in der Liste ausgewählt werden");
+            alert.setHeaderText("Es wurde kein Berg ausgewï¿½hlt");
+            alert.setContentText("Um einen Berg zu lï¿½schen, muss dieser zuerst in der Liste ausgewï¿½hlt werden");
 
             alert.showAndWait();
         }
