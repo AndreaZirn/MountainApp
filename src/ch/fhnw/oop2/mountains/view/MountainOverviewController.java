@@ -24,7 +24,6 @@ public class MountainOverviewController {
     private TableColumn<Mountain, String> nameColumn;
     @FXML
     private TableColumn<Mountain, Double> hoeheColumn;
-
     @FXML
     private TextField idField;
     @FXML
@@ -118,6 +117,33 @@ public class MountainOverviewController {
             kantonField.setText(mountain.getKanton());
             gebietField.setText(mountain.getGebiet());
             bildunterschriftField.setText(mountain.getBildunterschrift());
+
+            //Editing and Binding
+            // TODO: Fehlermeldung wenn der falsche Wert eingegeben wird
+            nameField.textProperty().addListener((observable, oldValue, newValue) -> {
+                if (newValue.length() < 5) mountain.nameProperty().setValue(newValue);
+            });
+            hoeheField.textProperty().addListener((observable, oldValue, newValue) ->
+                mountain.hoeheProperty().setValue(Double.parseDouble(newValue)));
+            dominanzField.textProperty().addListener((observable, oldValue, newValue) ->
+                mountain.dominanzProperty().setValue(Double.parseDouble(newValue)));
+            kmBisField.textProperty().addListener((observable, oldValue, newValue) ->
+                mountain.kmBisProperty().setValue(newValue));
+            mBisField.textProperty().addListener((observable, oldValue, newValue) ->
+                mountain.mBisProperty().setValue(newValue));
+            schartenhoeheField.textProperty().addListener((observable, oldValue, newValue) ->
+                mountain.schartenhoeheProperty().setValue(Double.parseDouble(newValue)));
+            typField.textProperty().addListener((observable, oldValue, newValue) ->
+                mountain.typProperty().setValue(newValue));
+            regionField.textProperty().addListener((observable, oldValue, newValue) ->
+                    mountain.regionProperty().setValue(newValue));
+            kantonField.textProperty().addListener((observable, oldValue, newValue) ->
+                    mountain.kantonProperty().setValue(newValue));
+            gebietField.textProperty().addListener((observable, oldValue, newValue) ->
+                    mountain.gebietProperty().setValue(newValue));
+            bildunterschriftField.textProperty().addListener((observable, oldValue, newValue) ->
+                    mountain.bildunterschriftProperty().setValue(newValue));
+
         } else {
             // Mountain is null, remove all the text.
             nameField.setText("");
