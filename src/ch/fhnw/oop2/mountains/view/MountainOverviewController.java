@@ -5,7 +5,6 @@ import ch.fhnw.oop2.mountains.MountainStarter;
 import ch.fhnw.oop2.mountains.model.Mountain;
 import ch.fhnw.oop2.mountains.model.MountainListModel;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -48,6 +47,8 @@ public class MountainOverviewController {
     private TextField gebietField;
     @FXML
     private TextField bildunterschriftField;
+
+    private Mountain mountain;
 
 
     // Reference to the mountain list model
@@ -104,7 +105,10 @@ public class MountainOverviewController {
      * @param mountain the mountain or null
      */
     public void showMountainDetails(Mountain mountain) {
-        if (mountain != null) {
+
+        this.mountain = mountain;
+
+        if (this.mountain != null) {
             // Fill the labels with info from the mountain object.
             nameField.setText(mountain.getName());
             hoeheField.setText(String.valueOf(mountain.getHoehe()));
@@ -123,26 +127,43 @@ public class MountainOverviewController {
             nameField.textProperty().addListener((observable, oldValue, newValue) -> {
                 if (newValue.length() < 5) mountain.nameProperty().setValue(newValue);
             });
-            hoeheField.textProperty().addListener((observable, oldValue, newValue) ->
-                mountain.hoeheProperty().setValue(Double.parseDouble(newValue)));
-            dominanzField.textProperty().addListener((observable, oldValue, newValue) ->
-                mountain.dominanzProperty().setValue(Double.parseDouble(newValue)));
-            kmBisField.textProperty().addListener((observable, oldValue, newValue) ->
-                mountain.kmBisProperty().setValue(newValue));
-            mBisField.textProperty().addListener((observable, oldValue, newValue) ->
-                mountain.mBisProperty().setValue(newValue));
-            schartenhoeheField.textProperty().addListener((observable, oldValue, newValue) ->
-                mountain.schartenhoeheProperty().setValue(Double.parseDouble(newValue)));
-            typField.textProperty().addListener((observable, oldValue, newValue) ->
-                mountain.typProperty().setValue(newValue));
-            regionField.textProperty().addListener((observable, oldValue, newValue) ->
-                    mountain.regionProperty().setValue(newValue));
-            kantonField.textProperty().addListener((observable, oldValue, newValue) ->
-                    mountain.kantonProperty().setValue(newValue));
-            gebietField.textProperty().addListener((observable, oldValue, newValue) ->
-                    mountain.gebietProperty().setValue(newValue));
-            bildunterschriftField.textProperty().addListener((observable, oldValue, newValue) ->
-                    mountain.bildunterschriftProperty().setValue(newValue));
+            hoeheField.textProperty().addListener((observable, oldValue, newValue) -> {
+                if(this.mountain != null) this.mountain.hoeheProperty().setValue(Double.parseDouble(newValue));
+            });
+            dominanzField.textProperty().addListener((observable, oldValue, newValue) -> {
+                if(this.mountain != null)  this.mountain.dominanzProperty().setValue(Double.parseDouble(newValue));
+            });
+            kmBisField.textProperty().addListener((observable, oldValue, newValue) -> {
+                if(this.mountain != null) this.mountain.kmBisProperty().setValue(newValue);
+            });
+
+            mBisField.textProperty().addListener((observable, oldValue, newValue) -> {
+                if(this.mountain != null) this.mountain.mBisProperty().setValue(newValue);
+                    });
+
+            schartenhoeheField.textProperty().addListener((observable, oldValue, newValue) -> {
+                if(this.mountain != null) this.mountain.schartenhoeheProperty().setValue(Double.parseDouble(newValue));
+            });
+
+            typField.textProperty().addListener((observable, oldValue, newValue) -> {
+                if(this.mountain != null) this.mountain.typProperty().setValue(newValue);
+                    });
+
+            regionField.textProperty().addListener((observable, oldValue, newValue) -> {
+                if(this.mountain != null) this.mountain.regionProperty().setValue(newValue);
+                    });
+
+            kantonField.textProperty().addListener((observable, oldValue, newValue) -> {
+                if(this.mountain != null)this.mountain.kantonProperty().setValue(newValue);
+                    });
+
+            gebietField.textProperty().addListener((observable, oldValue, newValue) -> {
+                if(this.mountain != null)  this.mountain.gebietProperty().setValue(newValue);
+                    });
+
+            bildunterschriftField.textProperty().addListener((observable, oldValue, newValue) -> {
+                if(this.mountain != null) this.mountain.bildunterschriftProperty().setValue(newValue);
+            });
 
         } else {
             // Mountain is null, remove all the text.

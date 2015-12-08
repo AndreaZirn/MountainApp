@@ -52,6 +52,9 @@ public class MountainStarter extends Application {
             rootLayout = (BorderPane) loader.load();
             ((RootLayoutController)loader.getController()).setMountainStarter(this);
 
+            //MountainListModel
+
+
             // Show the scene containing the root layout.
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);

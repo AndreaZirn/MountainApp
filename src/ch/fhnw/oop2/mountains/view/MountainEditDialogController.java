@@ -104,7 +104,6 @@ public class MountainEditDialogController {
             mountain.setKanton(mountain.getKanton());
             mountain.setGebiet(mountain.getGebiet());
             mountain.setBildunterschrift(mountain.getBildunterschrift());
-
             okClicked = true;
             dialogStage.close();
         }
